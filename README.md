@@ -10,17 +10,7 @@ In the project, data assimilation methods such as EnKF and ES-MDA are used to es
   - Infer subdaily hydrologic exchange flux
 
 # Contents
-# 
-| Workflow | Contents |
-| ------ | ------ |
-| 1. [Pre-Processing](https://github.com/kchen8921/SFA-DA/blob/master/pre-processing.ipynb) | 1.1 Preprocess raw voltage data |
-|                   | 1.2 Convert voltage to temperature |
 
-| 2. [Data Assimilation](https://github.com/kchen8921/SFA-DA/blob/master/Data%20Assimilation.ipynb) | 2.1 Data Assimilation Framework |
-|                      | 2.2 Configuration of forward simulator |
-|                      | 2.3 Configuration of observation data |
-|                      | 2.4 Input setting and execution |
-|                      | 2.5 Submit batch job on cluster |
 
 
 
@@ -35,6 +25,5 @@ In the project, data assimilation methods such as EnKF and ES-MDA are used to es
 2. The numerical model for subsurface flow at Hanford site is built using [PFLOTRAN](http://www.pflotran.org/), a massively parallel reactive flow and transport model for describing surface and subsurface processes.
 3. The workflow is adapted to the supercomputers at [National Energy Research Scientific Computing Center (NERSC)](http://www.nersc.gov/).
 
-![Estimated flux](https://github.com/kchen8921/SFA-DA/blob/2799ad89472f6a627e0631474edd6be1562277b1/model/TH1D/figure/ENKF-ESMDA.png)
-![Estimated perm](https://github.com/kchen8921/SFA-DA/blob/master/model/TH1D/figure/flux%20estimation.png)
+
 
