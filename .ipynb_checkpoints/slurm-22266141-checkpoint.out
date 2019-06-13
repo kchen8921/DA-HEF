@@ -1,0 +1,19 @@
+/usr/common/software/python/3.6-anaconda-4.4/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Traceback (most recent call last):
+  File "hef.py", line 96, in <module>
+    state_vector = Assimilator(nreaz,infl,th1d,obs,**kwargs2)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/da_methods.py", line 138, in Assimilator
+    spinup(nreaz,mod,obs,with_head,exeprg,ncore)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/util.py", line 291, in spinup
+    generate_dbase(nreaz,mod)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/util.py", line 155, in generate_dbase
+    h5file = h5py.File(filename,'w')
+  File "/usr/common/software/python/3.6-anaconda-4.4/lib/python3.6/site-packages/h5py/_hl/files.py", line 271, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, swmr=swmr)
+  File "/usr/common/software/python/3.6-anaconda-4.4/lib/python3.6/site-packages/h5py/_hl/files.py", line 107, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 98, in h5py.h5f.create
+OSError: Unable to create file (Unable to lock file, errno = 524, error message = 'unknown error 524')

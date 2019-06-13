@@ -1,0 +1,166 @@
+ Extent of Gridded Domain
+  X: 0.000000000000000E+000 - 1.00000000000000
+  Y: 0.000000000000000E+000 - 1.00000000000000
+  Z: -0.200000000000000 - 0.000000000000000E+000
+ 
+ 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Initial Condition
+
+--------------------------------------------------------------------------------
+          Flow Condition:   initial
+                  Region:   all
+--------------------------------------------------------------------------------
+
+  Flow Condition: initial
+    Synchronize time with update: no
+    Time units: yr
+    Length units: m
+      Datum:
+
+    Sub Condition: pressure
+      Type: neumann
+      Gradient:
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  1
+
+    Sub Condition: temperature
+      Type: dirichlet
+      Gradient:
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  1
+
+--------------------------------------------------------------------------------
+ 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Boundary Condition
+
+--------------------------------------------------------------------------------
+          Flow Condition:   flow_top
+                  Region:   top
+--------------------------------------------------------------------------------
+
+  Flow Condition: flow_top
+    Synchronize time with update: no
+    Time units: yr
+    Length units: m
+      Datum:
+
+    Sub Condition: pressure
+      Type: neumann
+      Gradient:
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  1
+
+    Sub Condition: temperature
+      Type: dirichlet
+      Gradient:
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Filename: ../pflotran_inputs/temp_top.dat
+          Is transient?: yes
+          Number of times:   6591
+          Is cyclic?: no
+          Buffer:
+            Rank:  2
+            Dims:    16591
+            Buffer Slice Size:   0
+          Array Rank:  1
+
+--------------------------------------------------------------------------------
+ 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Boundary Condition
+
+--------------------------------------------------------------------------------
+          Flow Condition:   flow_bottom
+                  Region:   bottom
+--------------------------------------------------------------------------------
+
+  Flow Condition: flow_bottom
+    Synchronize time with update: no
+    Time units: yr
+    Length units: m
+      Datum:
+
+    Sub Condition: pressure
+      Type: hydrostatic
+      Gradient:
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  1
+
+    Sub Condition: temperature
+      Type: dirichlet
+      Gradient:
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Filename: ../pflotran_inputs/temp_bottom.dat
+          Is transient?: yes
+          Number of times:   6591
+          Is cyclic?: no
+          Buffer:
+            Rank:  2
+            Dims:    16591
+            Buffer Slice Size:   0
+          Array Rank:  1
+
+--------------------------------------------------------------------------------
+
+ Requested processors and decomposition =     1, npx,y,z=   -1  -1  -1
+ Actual decomposition: npx,y,z=    1   1   1
+
+ 
+FLOW Time Stepper
+max steps: 999999
+max constant cumulative time steps: 5
+max cuts: 50
+ts reduction factor: 0.500000000000000
+ts maximum growth factor: 2.00000000000000
+ 
+FLOW Newton Solver
+        atol:  1.0000E-50
+        rtol:  1.0000E-50
+        stol:  1.0000E-60
+        dtol:  1.0000E+20
+     maxnorm:  1.0000E+20
+   inftolres: -9.9900E+02
+   inftolupd:  1.0000E+00
+inftolrelupd: -9.9900E+02
+inftolsclres: -9.9900E+02
+    max iter:    20
+    min iter:     1
+        maxf: 10000
+ 
+matrix type:baij                
+precond. matrix type:baij                
+inexact newton: off
+print convergence: on
+print detailed convergence: off
+check infinity norm: on
+ 
+FLOW Linear Solver
+   solver:  bcgs
+  precond:  ilu
+     atol:  1.0000E-50
+     rtol:  1.0000E-05
+     dtol:  1.0000E+04
+ max iter:  10000
+
+ Wall Clock Time:  5.7558E-01 [sec]   9.5930E-03 [min]   1.5988E-04 [hr]
