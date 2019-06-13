@@ -1,0 +1,137 @@
+;{CR23X}
+;
+*Table 1 Program
+  01: 120       Execution Interval (seconds)
+
+
+1:  Time (P18)
+ 1: 3        Store Year,Day,Hr,Min,Sec in 5 consecutive locations
+ 2: 0000     Mod/By
+ 3: 1        Loc [ Time_1    ]
+
+
+2:  Excite-Delay (SE) (P4)
+ 1: 17       Reps
+ 2: 10       Auto, Fast Range (OS>1.06)
+ 3: 1        SE Channel
+ 4: 1        Excite all reps w/Exchan 1
+ 5: 0000     Delay (0.01 sec units)
+ 6: 200      mV Excitation
+ 7: 7        Loc [ Volt_1    ]
+ 8: 1.0      Multiplier
+ 9: 0.0      Offset
+
+3:  Do (P86)
+ 1: 10       Set Output Flag High (Flag 0)
+
+4:  Sample (P70)^2373
+ 1: 5        Reps
+ 2: 1     -- Loc [ Time_1    ]
+
+
+
+5:  Sample (P70)^15112
+ 1: 17       Reps
+ 2: 7        Loc [ Volt_1    ]
+
+
+6:  If Flag/Port (P91)
+ 1: 10       Do if Output Flag (Flag 0) is High
+ 2: 20       Set Output Flag Low (Flag 0)
+
+
+*Table 2 Program
+  02: 120       Execution Interval (seconds)
+
+
+*Table 3 Subroutines
+
+End Program
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-Input Locations-
+1 Time_1    1 1 1
+2 Time_2    1 1 1
+3 Time_3    1 1 1
+4 Time_4    1 1 1
+5 Time_5    1 1 1
+6 _________ 0 0 0
+7 Volt_1    3 1 1
+8 Volt_2    3 1 1
+9 Volt_3    3 1 1
+10 Volt_4    3 1 1
+11 Volt_5    11 1 1
+12 Volt_6    9 1 1
+13 Volt_7    9 1 1
+14 Volt_8    9 1 1
+15 Volt_9    9 1 1
+16 Volt_10   9 1 1
+17 Volt_11   9 1 1
+18 Volt_12   9 1 1
+19 Volt_13   9 1 1
+20 Volt_14   9 1 1
+21 Volt_15   9 1 1
+22 Volt_16   9 1 1
+23 Volt_17   17 1 1
+24 _________ 0 0 0
+25 _________ 0 0 0
+26 _________ 0 0 0
+27 _________ 0 0 0
+28 _________ 0 0 0
+29 _________ 0 0 0
+30 _________ 0 0 0
+31 _________ 0 0 0
+32 _________ 0 0 0
+-Program Security-
+0000
+0000
+0000
+-Mode 4-
+-Final Storage Area 2-
+0
+-CR10X ID-
+0
+-CR10X Power Up-
+3
+-CR10X Compile Setting-
+3
+-CR10X RS-232 Setting-
+-1
+-DLD File Labels-
+0
+-Final Storage Labels-
+0,Time_1~1,2373
+0,Time_2~2
+0,Time_3~3
+0,Time_4~4
+0,Time_5~5
+1,Volt_1~7,15112
+1,Volt_2~8
+1,Volt_3~9
+1,Volt_4~10
+1,Volt_5~11
+1,Volt_6~12
+1,Volt_7~13
+1,Volt_8~14
+1,Volt_9~15
+1,Volt_10~16
+1,Volt_11~17
+1,Volt_12~18
+1,Volt_13~19
+1,Volt_14~20
+1,Volt_15~21
+1,Volt_16~22
+1,Volt_17~23
