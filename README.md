@@ -15,7 +15,7 @@ In the project, data assimilation methods such as EnKF and ES-MDA are used to es
 | ------ | ------ |
 | 1. [Pre-Processing](https://github.com/kchen8921/SFA-DA/blob/master/pre-processing.ipynb) | 1.1 Preprocess raw voltage data |
 |                   | 1.2 Convert voltage to temperature |
-|  
+
 | 2. [Data Assimilation](https://github.com/kchen8921/SFA-DA/blob/master/Data%20Assimilation.ipynb) | 2.1 Data Assimilation Framework |
 |                      | 2.2 Configuration of forward simulator |
 |                      | 2.3 Configuration of observation data |
