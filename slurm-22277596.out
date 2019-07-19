@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "hef.py", line 104, in <module>
+    state_vector = Assimilator(nreaz,infl,th1d,obs,**kwargs2)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/da_methods.py", line 138, in Assimilator
+    spinup(nreaz,mod,obs,with_head,exeprg,ncore)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/util.py", line 289, in spinup
+    generate_dbase(nreaz,mod)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/util.py", line 155, in generate_dbase
+    h5file = h5py.File(filename,'w')
+  File "/usr/common/software/python/2.7-anaconda-4.4/lib/python2.7/site-packages/h5py/_hl/files.py", line 271, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, swmr=swmr)
+  File "/usr/common/software/python/2.7-anaconda-4.4/lib/python2.7/site-packages/h5py/_hl/files.py", line 107, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper (/home/ilan/minonda/conda-bld/h5py_1496871545397/work/h5py/_objects.c:2846)
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper (/home/ilan/minonda/conda-bld/h5py_1496871545397/work/h5py/_objects.c:2804)
+  File "h5py/h5f.pyx", line 98, in h5py.h5f.create (/home/ilan/minonda/conda-bld/h5py_1496871545397/work/h5py/h5f.c:2290)
+IOError: Unable to create file (Can't retrieve stat info for file)

@@ -15,7 +15,7 @@ SIMULATION
   RESTART
     FILENAME 1dthermal-restart.chk  
     REALIZATION_DEPENDENT
-#    RESET_TO_TIME_ZERO
+    RESET_TO_TIME_ZERO
 /
 
 END
@@ -56,9 +56,9 @@ END
 #=========================== discretization ===================================
 GRID
   TYPE structured
-  NXYZ 1 1 65
+  NXYZ 1 1 10
   BOUNDS
-    0.d0 0.d0 -0.65d0
+    0.d0 0.d0 -0.1d0
     1.d0 1.d0 0.d0
   /
 END
@@ -120,7 +120,7 @@ END
 
 #=========================== times ============================================
 TIME
-  FINAL_TIME 90000.0 sec
+  FINAL_TIME 900.0 sec
   INITIAL_TIMESTEP_SIZE 6.0d1  min
   MAXIMUM_TIMESTEP_SIZE 6.0d1 min
   MINIMUM_TIMESTEP_SIZE 1.0d-2 sec
@@ -129,7 +129,7 @@ END
 #=========================== regions ==========================================
 REGION all
   COORDINATES
-    0.d0 0.d0 -0.65d0
+    0.d0 0.d0 -0.1d0
     1.d0 1.d0 0.d0
   /
 END
@@ -145,8 +145,8 @@ END
 REGION bottom
   FACE BOTTOM
   COORDINATES
-    0.d0 0.d0 -0.65d0
-    1.d0 1.d0 -0.65d0
+    0.d0 0.d0 -0.1d0
+    1.d0 1.d0 -0.1d0
   /
 END
 
@@ -184,7 +184,7 @@ FLOW_CONDITION initial
     TEMPERATURE dirichlet
   /
   PRESSURE 101325.d0
-  TEMPERATURE 19.6477069774d0
+  TEMPERATURE 16.3913188292d0
 END
 
 

@@ -1,0 +1,22 @@
+srun: fatal: Can not execute /global/project/projectdirs/pflotran/pflotran-cori-new/src/pflotran/pflotran
+./src/pflotran.sh: line 10: 60620 Aborted                 srun -n $ncore $pflotran_exe -pflotranin $name".in" -stochastic -num_realizations $nreaz -num_groups $ncore -screen_output off
+srun: fatal: Can not execute /global/project/projectdirs/pflotran/pflotran-cori-new/src/pflotran/pflotran
+./src/pflotran.sh: line 10: 60723 Aborted                 srun -n $ncore $pflotran_exe -pflotranin $name".in" -stochastic -num_realizations $nreaz -num_groups $ncore -screen_output off
+Data assimilation time window: [  0 900] 
+Traceback (most recent call last):
+  File "hef.py", line 104, in <module>
+    state_vector = Assimilator(nreaz,infl,th1d,obs,**kwargs2)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/da_methods.py", line 167, in Assimilator
+    simu_ensemble = run_forward_simulation(nreaz,mod,obs_temp,with_head,exeprg,ncore)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/util.py", line 269, in run_forward_simulation
+    simu_ensemble = generate_simulated_ensemble(nreaz,obs.coord,obs.time,mod.z)
+  File "/global/u2/k/kchen89/notebook/workflow/DA-HEF/src/util.py", line 204, in generate_simulated_ensemble
+    h5f = h5py.File("./pflotran_results/1dthermalR{}.h5".format(ireaz+1),'r')
+  File "/usr/common/software/python/2.7-anaconda-4.4/lib/python2.7/site-packages/h5py/_hl/files.py", line 271, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, swmr=swmr)
+  File "/usr/common/software/python/2.7-anaconda-4.4/lib/python2.7/site-packages/h5py/_hl/files.py", line 101, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper (/home/ilan/minonda/conda-bld/h5py_1496871545397/work/h5py/_objects.c:2846)
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper (/home/ilan/minonda/conda-bld/h5py_1496871545397/work/h5py/_objects.c:2804)
+  File "h5py/h5f.pyx", line 78, in h5py.h5f.open (/home/ilan/minonda/conda-bld/h5py_1496871545397/work/h5py/h5f.c:2123)
+IOError: Unable to open file (Unable to open file: name = './pflotran_results/1dthermalr1.h5', errno = 2, error message = 'no such file or directory', flags = 0, o_flags = 0)
